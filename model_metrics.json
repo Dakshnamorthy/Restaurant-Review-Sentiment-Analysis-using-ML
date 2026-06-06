@@ -1,0 +1,293 @@
+{
+    "accuracy": 0.78,
+    "confusion_matrix": [
+        [
+            124,
+            28
+        ],
+        [
+            38,
+            110
+        ]
+    ],
+    "classification_report": {
+        "0": {
+            "precision": 0.7654320987654321,
+            "recall": 0.8157894736842105,
+            "f1-score": 0.7898089171974523,
+            "support": 152.0
+        },
+        "1": {
+            "precision": 0.7971014492753623,
+            "recall": 0.7432432432432432,
+            "f1-score": 0.7692307692307693,
+            "support": 148.0
+        },
+        "accuracy": 0.78,
+        "macro avg": {
+            "precision": 0.7812667740203971,
+            "recall": 0.7795163584637268,
+            "f1-score": 0.7795198432141108,
+            "support": 300.0
+        },
+        "weighted avg": {
+            "precision": 0.7810556450169976,
+            "recall": 0.78,
+            "f1-score": 0.7796570308672219,
+            "support": 300.0
+        }
+    },
+    "top_positive": [
+        {
+            "word": "great",
+            "weight": 2.925044901554014
+        },
+        {
+            "word": "delicious",
+            "weight": 1.851589909065796
+        },
+        {
+            "word": "good",
+            "weight": 1.5816676721369258
+        },
+        {
+            "word": "awesome",
+            "weight": 1.4038674363914603
+        },
+        {
+            "word": "amazing",
+            "weight": 1.4032547596457727
+        },
+        {
+            "word": "friendly",
+            "weight": 1.1736066245421046
+        },
+        {
+            "word": "love",
+            "weight": 1.108386664351709
+        },
+        {
+            "word": "nice",
+            "weight": 1.0345961005378708
+        },
+        {
+            "word": "excellent",
+            "weight": 1.0262091186149196
+        },
+        {
+            "word": "fantastic",
+            "weight": 0.924026053597502
+        },
+        {
+            "word": "best",
+            "weight": 0.8663535002441063
+        },
+        {
+            "word": "loved",
+            "weight": 0.8312194248813143
+        },
+        {
+            "word": "perfect",
+            "weight": 0.7805590725096946
+        },
+        {
+            "word": "place",
+            "weight": 0.768430760398038
+        },
+        {
+            "word": "assure",
+            "weight": 0.7635505490633377
+        },
+        {
+            "word": "tender",
+            "weight": 0.7604658948671027
+        },
+        {
+            "word": "town",
+            "weight": 0.7531189450963102
+        },
+        {
+            "word": "attentive",
+            "weight": 0.7142908125883187
+        },
+        {
+            "word": "fun",
+            "weight": 0.6741480805774754
+        },
+        {
+            "word": "first",
+            "weight": 0.6673398955345254
+        },
+        {
+            "word": "buffet",
+            "weight": 0.6665748861062075
+        },
+        {
+            "word": "spot",
+            "weight": 0.644778013097175
+        },
+        {
+            "word": "enjoyed",
+            "weight": 0.638632727170403
+        },
+        {
+            "word": "price",
+            "weight": 0.6379182957572335
+        },
+        {
+            "word": "happy",
+            "weight": 0.6111061802055533
+        },
+        {
+            "word": "chef",
+            "weight": 0.594609285541463
+        },
+        {
+            "word": "food good",
+            "weight": 0.5918966573613952
+        },
+        {
+            "word": "every",
+            "weight": 0.590127063306439
+        },
+        {
+            "word": "check",
+            "weight": 0.5729585500285954
+        },
+        {
+            "word": "bacon",
+            "weight": 0.5722228497011076
+        }
+    ],
+    "top_negative": [
+        {
+            "word": "bad",
+            "weight": -1.3646183425346057
+        },
+        {
+            "word": "minute",
+            "weight": -1.0337182120803154
+        },
+        {
+            "word": "back",
+            "weight": -0.9378452424926246
+        },
+        {
+            "word": "probably",
+            "weight": -0.8706771515017523
+        },
+        {
+            "word": "slow",
+            "weight": -0.857592197269622
+        },
+        {
+            "word": "impressed",
+            "weight": -0.8469299652220132
+        },
+        {
+            "word": "bland",
+            "weight": -0.840207551221087
+        },
+        {
+            "word": "much",
+            "weight": -0.835648696681245
+        },
+        {
+            "word": "poor",
+            "weight": -0.8216271078212554
+        },
+        {
+            "word": "worst",
+            "weight": -0.8097199910901889
+        },
+        {
+            "word": "nothing",
+            "weight": -0.7767932621704092
+        },
+        {
+            "word": "unfortunately",
+            "weight": -0.7709392249733452
+        },
+        {
+            "word": "rude",
+            "weight": -0.7703060594662978
+        },
+        {
+            "word": "terrible",
+            "weight": -0.7649337928640187
+        },
+        {
+            "word": "waited",
+            "weight": -0.7515406800719207
+        },
+        {
+            "word": "eating",
+            "weight": -0.7360754481299973
+        },
+        {
+            "word": "avoid",
+            "weight": -0.7163454387113418
+        },
+        {
+            "word": "mediocre",
+            "weight": -0.6994983660865158
+        },
+        {
+            "word": "took",
+            "weight": -0.6981146817729603
+        },
+        {
+            "word": "waste",
+            "weight": -0.6878398956893557
+        },
+        {
+            "word": "soggy",
+            "weight": -0.6557799718917442
+        },
+        {
+            "word": "like",
+            "weight": -0.6504098726597833
+        },
+        {
+            "word": "mistake",
+            "weight": -0.6428373533149184
+        },
+        {
+            "word": "rated",
+            "weight": -0.6428373533149184
+        },
+        {
+            "word": "better",
+            "weight": -0.6355688475030672
+        },
+        {
+            "word": "average",
+            "weight": -0.6340700961714147
+        },
+        {
+            "word": "coming",
+            "weight": -0.6229072188811716
+        },
+        {
+            "word": "return",
+            "weight": -0.6209753235694876
+        },
+        {
+            "word": "tasteless",
+            "weight": -0.6068266848577958
+        },
+        {
+            "word": "never",
+            "weight": -0.6039376279330644
+        }
+    ],
+    "dataset_stats": {
+        "total": 1000,
+        "positive": 500,
+        "negative": 500,
+        "pos_percentage": 50.0,
+        "neg_percentage": 50.0,
+        "avg_words_pos": 10.29,
+        "avg_words_neg": 11.498
+    }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentiChef | Restaurant Review Sentiment Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Ambient glow orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="app-container">
+
+        <!-- ── Header ── -->
+        <header class="top-header">
+            <div class="brand-title">
+                <i class="fa-solid fa-utensils brand-icon"></i>
+                <h1>SentiChef</h1>
+            </div>
+            <div class="analyzer-header">
+                <h2>Restaurant Review Sentiment Analyzer</h2>
+                <p>Type a review to classify it as Positive or Negative using the trained ML model.</p>
+            </div>
+            <div class="model-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">LogisticRegression · 78% Accuracy</span>
+            </div>
+        </header>
+
+        <!-- ── Two-column grid (fills all remaining height) ── -->
+        <div class="analyzer-grid">
+
+            <!-- LEFT: Input Card -->
+            <div class="glass-card">
+                <div class="card-header">
+                    <h3><i class="fa-regular fa-keyboard"></i> Enter Review</h3>
+                    <span class="char-count" id="analyzer-char-count">0 characters</span>
+                </div>
+
+                <textarea
+                    class="analyzer-textarea"
+                    id="analyzer-input"
+                    placeholder="e.g. 'The burgers were amazing and service was super fast!'"></textarea>
+
+                <div class="analyzer-actions">
+                    <!-- Quick example tags -->
+                    <div class="template-tags">
+                        <span class="template-tag-label">Quick examples:</span>
+                        <span class="template-tag" data-text="Waitress was extremely friendly and food was cooked to perfection. Highly recommend!">Positive</span>
+                        <span class="template-tag" data-text="The crust is totally soggy, and the service was extremely slow. Terrible experience.">Negative</span>
+                        <span class="template-tag" data-text="It was okay. Not the best sushi but decent price. Service could be faster.">Mixed</span>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="action-buttons">
+                        <span class="char-count" id="analyzer-char-count-2"></span>
+                        <button class="btn btn-secondary" id="btn-analyzer-clear">Clear</button>
+                        <button class="btn btn-primary" id="btn-analyzer-run">
+                            <i class="fa-solid fa-magnifying-glass"></i> Analyze
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Result Card -->
+            <div class="glass-card" id="analyzer-result-card">
+
+                <!-- Placeholder (shown before first prediction) -->
+                <div class="result-placeholder" id="analyzer-result-placeholder">
+                    <i class="fa-solid fa-comment-dots placeholder-icon"></i>
+                    <h3>Awaiting Input</h3>
+                    <p>Type a review on the left or pick a quick example to see ML predictions here.</p>
+                </div>
+
+                <!-- Result (hidden until first prediction) -->
+                <div class="result-display hidden" id="analyzer-result-display">
+
+                    <!-- Sentiment badge row -->
+                    <div class="result-header">
+                        <span class="card-subtitle">Prediction Result</span>
+                        <div class="sentiment-indicator" id="sentiment-indicator-badge">
+                            <i class="fa-solid" id="sentiment-icon"></i>
+                            <span id="sentiment-text">—</span>
+                        </div>
+                    </div>
+
+                    <!-- Confidence gauge -->
+                    <div class="confidence-section">
+                        <div class="gauge-header">
+                            <span>Prediction Confidence</span>
+                            <span class="gauge-value" id="confidence-percentage">—</span>
+                        </div>
+                        <div class="gauge-bar-outer">
+                            <div class="gauge-bar-inner" id="confidence-bar" style="width:0%"></div>
+                        </div>
+                        <div class="prob-distribution-sub">
+                            <span>Prob Negative: <strong id="prob-neg-val">—</strong></span>
+                            <span>Prob Positive: <strong id="prob-pos-val">—</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Word highlights -->
+                    <div class="word-highlights-section">
+                        <h4>Word Contribution Highlights</h4>
+                        <p class="highlight-desc">
+                            <span style="color:#2dd4bf">■ Green</span> words push prediction towards Positive &nbsp;|&nbsp;
+                            <span style="color:#fb7185">■ Red</span> words push towards Negative. Hover a word for its ML coefficient.
+                        </p>
+                        <div class="highlight-box" id="highlighted-text-box"></div>
+                    </div>
+
+                    <!-- Preprocessed text -->
+                    <div class="preprocessed-section">
+                        <h4>Model Input (after preprocessing)</h4>
+                        <code id="preprocessed-text-box"></code>
+                    </div>
+
+                </div>
+            </div>
+
+        </div><!-- /.analyzer-grid -->
+    </div><!-- /.app-container -->
+
+    <!-- Floating coefficient tooltip -->
+    <div id="coeff-tooltip" class="tooltip hidden"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
